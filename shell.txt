@@ -1,0 +1,36 @@
+Edit Data from Terminal ::
+
+>>> from user_app.models import User
+>>> obj = User.objects.get(first_name='Meet')
+>>> obj.first_name='DK'
+>>> obj.save()
+>>> user_details = User.objects.all()
+>>> for user in user_details:
+...     print(user.first_name)
+
+
+Delete data ::
+
+>>> from user_app.models import User
+>>> x = User.objects.all()[5]
+>>> x.delete()
+(1, {'user_app.User': 1})
+>>> user_details = User.objects.all()
+>>> for user in user_details:
+...     print(user.first_name)
+
+
+Display Data ::
+
+>>> from user_app.models import User
+>>> user_details = User.objects.all()
+>>> for user in user_details:
+...     print(user.first_name)
+... 
+
+
+Add Data ::
+
+>>> from user_app.models import User
+>>> new = User(first_name='ADDD',last_name='xyz',email='ddd@gmail.com',password='AAAA@344')
+>>> new.save()
